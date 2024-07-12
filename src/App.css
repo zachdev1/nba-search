@@ -1,11 +1,110 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header{
+  font-family: "Red Hat Display", sans-serif;
+  background-color:#1D428A;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+header img{
+  height: 50px;
+  width: 50px;
+  margin-left: 2rem;
+}
+
+
+header h1{
+  padding: 5px 0 10px 1rem;
+
+}
+
+form{
+  font-family: "Red Hat Display", sans-serif;
   text-align: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+form input{
+  width:25%;
+  border-radius: 5px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 25px;
+  flex: 1;
+}
+
+form input:focus {
+  background-color: rgb(240, 240, 240);
+}
+
+form button{
+  width: 15%;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  line-height: 34px;
+  font-size: 17px;
+  background-color: #efeeea;
+  transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+}
+
+form button:hover {
+    color: #241c15;
+    background-color: #d9d7cd;
+}
+
+.Avg{
+  margin-top: 8rem;
+  font-family: "Red Hat Display", sans-serif;
+  margin-bottom: 5rem;
+}
+
+.Avg h1, p{
+  text-align: center;
+}
+
+.Avg table{
+  width: 50%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Avg th{
+  background-color: #a09d9d;
+}
+
+.Avg th, td{
+  border: 1px solid black;
+  letter-spacing: 1px;
+  padding: 0;
+}
+
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+footer a{
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+}
+
+footer a:hover{
+  color: #777777;
+  transition-delay:2s;
+  
 }
