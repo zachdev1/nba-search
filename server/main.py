@@ -6,10 +6,14 @@ from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.static import players
 
 app = Flask(__name__)
-cors = CORS(app, origins=["https://nba-search.vercel.app/"])
+app = app
+cors = CORS(app, origins=["https://nba-search.vercel.app"])
+
+@app.route("/")
+def health_check():
+    return "OK", 200
 
 @app.route("/api/players", methods=['GET'])
-
 def getPlayer():
     player_name = request.args.get('name')
     if player_name:
@@ -23,7 +27,7 @@ def getPlayer():
                 break
             
         if player_id is None:
-            return jsonify({'error': 'Player not found'})
+            return jsonify({'error': 'Player not found'}), 404
         
         # Get career stats
         career_stats = playercareerstats.PlayerCareerStats(player_id=player_id)
@@ -44,9 +48,7 @@ def getPlayer():
         averages_json = averages.to_dict(orient='records')
         return jsonify(averages_json)
     else:
-        return jsonify({'error': 'Player name parameter is missing'})
+        return jsonify({'error': 'Player name parameter is missing'}), 400
     
 if __name__ == '__main__':
-    app.run()
-
-app = app
+    app.run(debug=True)
