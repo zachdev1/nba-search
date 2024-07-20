@@ -13,7 +13,11 @@
 .git
 .gitignore
 
+# Node modules
+node_modules/
+
 # Python pycache:
 __pycache__/
+venv/
 # Ignored by the build system
 /setup.cfg
