@@ -1,2 +1,4 @@
 runtime: python311
-entrypoint: python -m gunicorn -b :$PORT server.main:app
+handlers:
+- url: /.*
+  script: auto
