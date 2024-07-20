@@ -7,11 +7,12 @@ const App = () => {
   const [playerName, setPlayerName] = useState('');
   const [playerStats, setPlayerStats] = useState('');
 
+  const URL = process.env.URL 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`https://nba-search.vercel.app/api/players?name=${playerName}`);
+      const response = await axios.get(`${URL}/api/players?name=${playerName}`);
       setPlayerStats(response.data); 
     } catch (error) {
       console.error('Error fetching player data:', error);

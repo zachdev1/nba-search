@@ -6,7 +6,7 @@ from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.static import players
 
 app = Flask(__name__)
-cors = CORS(app, origins='*')
+cors = CORS(app, origins=["https://nba-search.vercel.app/"])
 
 @app.route("/api/players", methods=['GET'])
 
