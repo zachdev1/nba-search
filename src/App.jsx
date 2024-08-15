@@ -7,8 +7,8 @@ const App = () => {
   const [playerName, setPlayerName] = useState('');
   const [playerStats, setPlayerStats] = useState('');
 
-const URL = process.env.URL
-// const URL = "http://localhost:5000"
+// const URL = process.env.URL
+const URL = "https://nba-search-production.up.railway.app/"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
